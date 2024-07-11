@@ -1,0 +1,22 @@
+Abbreviations used in the njs-base-app01 app to construct data Table names, 
+component names, and variable names.  
+
+I want to use important names that are very self-explanatory such as: 
+Customer-Address-List or Event-Venue-Manager.  However, names like 
+these can easily get very long.  So, we will use well-documented 
+abbreviations for the second, third, and fourth names that may be 
+combined when we construct important names.  The first word should 
+NOT be abbreviated. 
+Examples: 
+Use Customer-Addr-List  instead of Customer-Address-List 
+Use Event-Venue-Mgr instead of Event-Venue-Manager.   
+
+Abbreviation   Description
+-------------  -----------------
+mgr            manager
+msg            message
+addr           address 
+adjust         adjustment
+
+Please add additional abbreviations to this list 
+as needed. 

@@ -1,0 +1,39 @@
+How to Use The Documentation Templates.txt
+
+The purpose of this document is to explain to the developer, 
+how to use the two documentation templates: 
+- ORIGINAL_component_docs_template.txt
+- REVISION_component_docs_template.txt
+
+Quick Start Explanation:
+- After you have CREATED a new component, 
+  a. Copy the Contents from the ORIGINAL template file 
+     and paste it at the end of the component code file. 
+
+     Note: Also copy line #1 of the template file 
+        // Component Name: 
+     paste that at the TOP of the component code file,
+     and enter the component name on that line.
+
+  b. Fill in the blanks and answer the questions.  
+
+
+- After you have MODIFIED an existing component, 
+  -- AND/OR -- 
+  If that component DOES NOT have an ORIGINAL documentation block, 
+  -- THEN --  
+    a. Copy the Contents from the ORIGINAL template 
+       and paste it at the end of the component file and then 
+    b. Fill in the blanks and answer the ORIGINAL docs questions
+       including your revision details.  
+
+
+- After you have MODIFIED an existing component, 
+  -- AND -- 
+  If that component DOES have an ORIGINAL documentaion block, 
+  -- THEN --
+    a. Copy the Contents from the REVISION template 
+       and paste it AFTER the ORIGINAL documentation block and then, 
+    b. Fill in the blanks and answer the REVISION docs questions.  
+
+(End of Document)

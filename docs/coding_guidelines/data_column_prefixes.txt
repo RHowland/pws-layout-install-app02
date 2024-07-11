@@ -1,0 +1,21 @@
+Data_Column_Prefixes.txt
+
+Please use these prefixes when assigning 
+names to data table columns: 
+
+Example: 
+For a table primary key, instead of "id", 
+use "cust_id".
+For an address, instead of address, 
+use "cust_address".
+
+Data Table Name     Prefix
+----------------    ------------
+customer            cust
+address             addr
+order_header        ordh 
+order_line          ordl 
+product             prod 
+service             srvc 
+employee            empl 
+event               evnt 

@@ -1,0 +1,44 @@
+Naming Conventions.txt 
+
+Database Tables
+- Use singular names:
+   customer (preferred) vs customers (not preferred)
+- For multi word names, use snake case: words 
+  separated by underscore character.
+  Example: cust_address
+
+Table Column Names
+- Use the Table Prefix at the beginning of 
+  column names.  (See data_column_prefixes.txt)
+
+React Component Names
+- Use Pascal case for each component name and the  
+  name for the file that contains that component.
+  - Pascal names, start with upper case letter
+  Example: A component to send an email message 
+  should be given a pascal name like this: 
+  SendEmailMessage.  And the file containing this 
+  component should have the same name 
+  "SendEmailMessage.tsx" 
+
+Next.js Webpage Components
+These naming guidelines were taken from the 
+Airbnb Javascript Style Guide.
+- For each webpage component, append the word "Page" 
+  to the end of the folder name *and* the component 
+  name.  
+  Examples: HomePage, AboutPage, ContactPage.
+- In Next.js, for web page files (all of which must 
+  be named page.tsx), give the parent folder the 
+  same pascal-case name as the page component name. 
+  About page example: 
+  - To configure the About page, under the app folder, 
+    - Create a new folder named  "AboutPage".  
+    - In this folder, create the "page.tsx" file to 
+      hold the AboutPage component.  Then, inside the 
+      page.tsx file, name this page component "AboutPage".  
+
+Javascript Code Styles
+- Follow the Airbnb Javascript Style guidelines
+  - https://airbnb.io/javascript/react/
+

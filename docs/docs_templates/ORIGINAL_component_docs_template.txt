@@ -1,0 +1,38 @@
+// Component Name: 
+
+
+(Your code goes here)
+
+
+/**
+* =====================================================================
+*   ORIGINAL DOCUMENTATION  (Append to end of component code block)
+* =====================================================================
+* File Name      : 
+* Component Name : 
+* Component Type : 
+* Date Created   : 
+* Dev Name       : 
+* ------------------------------
+* Question: Why was it necessary to create this component?
+* Answer  : 
+*
+* ------------------------------
+* Question: What does this component do?: 
+* Answer  :   
+* 
+* ------------------------------
+* Footnote Comments:   (Enter "none" if you have no comments)
+* 
+* ------------------------------
+* Input Comments:     (Enter "none" if you have no comments)
+* 
+* ------------------------------
+* Output Comments:    (Enter "none" if you have no comments)
+* 
+* ------------------------------
+* Additional Comments:
+* Question: Did you have to write any unusual code? 
+* Answer  : 
+*
+*/

@@ -1,0 +1,82 @@
+Explanation about the ORIGINAL example file.txt
+
+The purpose of this document is explain details 
+about this completed example file: 
+  Completed_ORIGINAL_docs_example.txt
+
+-----------------------------------------------------------
+Please remember: 
+
+The ORIGINAL template file is for the FIRST TIME you create 
+a code file --OR-- the FIRST TIME you modify that code file. 
+
+The REVISION template is for each time you REVISE a component 
+file.
+
+-----------------------------------------------------------
+Details about the example ORIGINAL documentation:
+
+Please notice these details:
+1. (on line # 1)
+   Enter the name of this component.
+
+2. (on lines # 11 and 16)
+   Enter short "Footnote nn" markers to mark locations 
+   that need a comment.  
+   These markers are similar to footnote numbers that 
+   you have seen in text books. 
+
+3. (on lines  # 56 - 60)
+   Enter the five requested data items
+
+4. (on line # 62)
+   Answer this question: 
+     Why was it necessary to create this component?
+
+   If this component contains mostly standard code and 
+   there was no special reason for creating it, then 
+   you can provide a standard answer: 
+   "To follow standard coding guidelines."
+
+   However, if there is some special reason that you had 
+   to create this component, please explain WHY you 
+   created that component.
+
+5. (on line # 66)
+   Answer this Most Important Question: 
+     What does this component do?
+
+   Please describe the functionality of this component 
+   as if you were talking to a good friend who is a 
+   beginner developer.  
+
+6. (on line # 72)
+   Notice the "Footnote 1" name, followed by some comments.  
+   This comment refers to code at line 11 in the body 
+   of the component. 
+
+7. (on line # 78)
+   Notice the "Footnote 2" name, followed by some comments. 
+   This comment refers to code at line 16 in the body 
+   of the component. 
+
+8. (on line # 83)
+   Enter comments about the Input props.
+
+9. (on line # 86) 
+   Enter comments about the Output props.
+
+10 (on line # 90)
+    Answer this question: 
+      Did you have to write any unusual code? 
+
+   If all the code that you wrote is very standard 
+   React code, then answer NO. 
+
+   If you had to write some very creative code, then 
+   please refer to the FootNote # that talks about 
+   that code. 
+
+
+
+(End of Document)

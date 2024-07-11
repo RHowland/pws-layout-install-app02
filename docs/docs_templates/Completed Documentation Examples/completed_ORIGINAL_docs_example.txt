@@ -1,0 +1,102 @@
+// Component Name: InsertPostData
+import React, { useState } from "react";
+import { useMutation } from "react-query";
+import axios from "axios";
+
+const InsertPostData = () => {
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [category, setCategory] = useState("");
+
+  // Footnote 1
+  const mutation = useMutation((newPost) =>
+    axios.post("https://jsonplaceholder.typicode.com/posts", newPost),
+  );
+
+  // Footnote 2
+  const submitData = () => {
+    mutation.mutate({ title, body, category });
+  };
+
+  if (mutation.isLoading) {
+    return <span>Submitting...</span>;
+  }
+
+  if (mutation.isError) {
+    return <span>Error: {mutation.error.message}</span>;
+  }
+
+  if (mutation.isSuccess) {
+    return <span>Post submitted!</span>;
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Title"
+      />
+      <input
+        type="text"
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
+        placeholder="Body"
+      />
+      <button onClick={submitData}>Submit</button>
+    </div>
+  );
+};
+export default CreatePost;
+/**
+* =====================================================================
+*   ORIGINAL DOCUMENTATION    (Append to end of component code block)
+* =====================================================================
+* File Name      : InsertPostData.tsx
+* Component Name : InsertPostData
+* Component Type : Data Mutation Component
+* Date Created   : 2023-08-22
+* Developer Name : Jim Baker
+* 
+* I did not create the original code for this component.
+* and I had trouble understanding what the previous coder 
+* intended.
+* 
+* I was the first person to document it and I only added 
+* code under footnote 1.
+*
+* ------------------------------
+* Question: Why was it necessary to create this component?
+* Answer  : To follow standard coding guidelines.
+*
+* ------------------------------
+* Question: What does this component do?: 
+* Answer  : It uses React Query and Axios to insert new Posts 
+* data into the jsonplaceholder development "database".  
+* 
+* ------------------------------
+* Footnote Comments:   (Enter "none" if you have no comments)
+* Footnote 1
+* The useMutation hook will create a new post.  
+* It takes a function that calls axios.post to submit the 
+* newPost to the specified URL. This mutation is used to 
+* manage post submission state. 
+*
+* Footnote 2
+* This function handles the data submission of the 
+* title and body values.
+*
+* ------------------------------
+* Input Comments:   (Enter "none" if you have no comments)
+* none
+* ------------------------------
+* Output Comments:  (Enter "none" if you have no comments)
+* none
+* ------------------------------
+* Additional Comments:
+* Question: Did you have to write any unusual code? 
+* Answer : no
+*
+*/
+

@@ -1,0 +1,147 @@
+// Component Name: InsertPostData
+import React, { useState } from "react";
+import { useMutation } from "react-query";
+import axios from "axios";
+
+const InsertPostData = () => {
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const [category, setCategory] = useState("");
+
+  // Footnote 1
+  const mutation = useMutation((newPost) =>
+    axios.post("https://jsonplaceholder.typicode.com/posts", newPost),
+  );
+
+  // Footnote 2
+  const submitData = () => {
+    mutation.mutate({ title, body, category });
+  };
+
+  if (mutation.isLoading) {
+    return <span>Submitting...</span>;
+  }
+
+  if (mutation.isError) {
+    return <span>Error: {mutation.error.message}</span>;
+  }
+
+  if (mutation.isSuccess) {
+    return <span>Post submitted!</span>;
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Title"
+      />
+      <input
+        type="text"
+        value={body}
+        onChange={(e) => setBody(e.target.value)}
+        placeholder="Body"
+      />
+      {/* Footnote 3 */}
+      <input
+        type="text"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+        placeholder="Category"
+      />      
+      <button onClick={submitData}>Submit</button>
+    </div>
+  );
+};
+export default CreatePost;
+/**
+* =====================================================================
+*   ORIGINAL DOCUMENTATION  (Append to end of component code block)
+* =====================================================================
+* ---------------------------------------------------------------------
+* File Name      : InsertPostData.tsx
+* Component Name : InsertPostData
+* Component Type : Data Mutation Component
+* Date Created   : 2023-08-22
+* Developer Name : Jim Baker
+* ------------------------------
+* Question: Why was it necessary to create this component?
+* Answer  : To follow standard coding guidelines.
+*
+* ------------------------------
+* Question: What does this component do?: 
+* Answer  : It uses React Query and Axios to insert new Posts 
+* data into the jsonplaceholder development "database".  
+* 
+* ------------------------------
+* Footnote Comments:   (Enter "none" if you have no Footnote comments)
+* Footnote 1
+* The useMutation hook will create a new post.  
+* It takes a function that calls axios.post to submit the 
+* newPost to the specified URL. This mutation is used to 
+* manage post submission state. 
+*
+* Footnote 2
+* This function handles the data submission of the 
+* title and body values.
+*
+* ------------------------------
+* Input Comments:   (Enter "none" if you have no Input comments)
+* none
+* ------------------------------
+* Output Comments:  (Enter "none" if you have no Output comments)
+* none
+* ------------------------------
+* Additional Comments:
+* Question: Did you have to write any unusual code? 
+* Answer : NO
+*
+*/
+/**
+* =====================================================================
+*   REVISION DOCUMENTATION  (Attach AFTER ORIGINAL documentation block)
+* =====================================================================
+* Date Revised   : 2023-10-15          (the date you made a code change)
+* Developer Name : Hasib Milan
+* ------------------------------
+* Question: Why was it necessary to revise this component?
+* Answer  : Added a post category to the post data. 
+*
+* ------------------------------
+* Describe Your Change(s): 
+* Added code to handle user input of a category value.
+* 
+* ------------------------------
+* Footnote Comments:    (Enter "none" if you have no comments)
+* Footnote 3
+* I added this third input code block.
+*
+* ------------------------------
+* Input Comments:      (Enter "none" if you have no comments)
+* none
+*
+* ------------------------------
+* Output Comments:     (Enter "none" if you have no comments)
+* Category value is added to the database along with the title
+* and body values.
+*
+* ------------------------------
+* Additional Comments:
+* Question: Did you have to write any unusual code? 
+* Answer  : NO
+*
+*/
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------
+End of example code block
