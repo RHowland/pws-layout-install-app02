@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 
 export default function HomePage() {
   return (
-    <main className="px-24 py-16">
+    <main className="md:px-24 md:py-16">
       <Hero />
     </main>
   );

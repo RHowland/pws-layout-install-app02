@@ -1,0 +1,440 @@
+(Install Date) 1R-2C-STD Layout Checklist-Log.txt
+=====================================================================
+This Checklist is designed to: 
+- give YOU (the developer) the information that is needed to install 
+  the ** 1-row, 2-column, Standard Collapse Layout Component **
+  into a Next.js web app.  Component Name: Lo1R2C_d01c01
+
+- serve as a check list that you can "Check-Mark" as you perform 
+  the install operations. 
+
+- serve as a report that you will:
+  - save in the docs/installs/ folder of a customer's web app
+  -- and --
+  - send to management when the project has been completed.
+
+
+--------------------------------------------------------------------
+Instructions for this form:
+
+1. Type your name, the date completed, and the project folder name 
+   at the top of this form. 
+
+2. Type "done" in the "Check Mark" field as you complete each 
+   operation.
+
+3. Type the requested details in all of the sections. 
+
+4. Add extra comments that might help a future developer (who might 
+   be you). 
+
+5. When you have completed the installation,
+   - CHANGE THIS DOCUMENT'S FILE NAME:
+     - by doing a SAVE-AS operation.
+     - Use the PROJECT COMPLETION DATE as the first part of the 
+       file name. 
+     - Save the completed document in this folder:
+         (web app project root folder)/docs/installs 
+   - Send a copy of the completed form to your manager. 
+
+**************************
+
+CAUTION:  The FIRST TIME that you save this file, 
+          You MUST DO A "SAVE-AS" OPERATION AND 
+          Enter the INSTALL COMPLETION DATE as the 
+          FIRST part of the file name!!
+
+EXAMPLE SAVE-AS FILE NAME:
+
+          2024-07-02 1R-2C-STD Layout Checklist-Log.txt
+
+In this example, the date (2024-07-02) is the date that the 
+developer completed his install.
+
+**************************
+
+=====================================================================
+=====================================================================
+
+               1R-2C-STD Layout Checklist-Log Form
+
+=====================================================================
+=====================================================================
+Project/Developer Details Section:
+----------------------------------
+ Developer Name       : Nihar Hegde
+ Date Completed       : 15-07-2024 
+ Web App Project Name : pws-layout-install-app02
+   
+=====================================================================
+COPY FILES SECTION:
+-------------------
+Copy the following files to the target folder-paths:
+                                                                                     Check
+File Name                 Target Folder-Path                                         Mark
+------------------------  ------------------------------------                       -----
+Lo1R2C_d01c01.txt         src/components/custom-ui/Lo1R2C_d01c01/Lo1R2C_d01c01.tsx    DONE
+grid.ts                   src/components/custom-ui/layout/grid/interfaces/grid.ts     DONE
+grid.tsx                  src/components/custom-ui/layout/grid/grid.ts                DONE
+ 
+
+Add comments about this section to help a future developer.
+
+Copy the files to the target folder-paths, if the folder path does not exist, create it.
+
+
+=====================================================================
+CODE CHANGE SECTION:
+--------------------
+Document code changes using the following form: 
+
+
+EXAMPLE of a properly documented code change:
+ Instructions: 
+ For every change that you make,  
+ - COPY and PASTE the code block BEFORE any changes are made.
+ - COPY and PASTE the same code block AFTER changes were made. 
+ - MARK the CHANGED LINES: 
+   with either:
+      "<--- added this line"
+      "<--- changed this line"
+      "<--- deleted this line"
+   
+The following section is an EXAMPLE of what an actual 
+code change should look like:
+
+------------------ BEGIN EXAMPLE Code Change nn ---------------------------
+Name of file that was changed: 
+  layout.tsx    
+Description of change: 
+  Add <Footer01 /> component to appear on all web pages.
+
+(begin BEFORE code block)   (before any changes were made)
+---------------------------
+...
+return (
+    <html lang="en">
+      <body className={roboto.className}>
+        <div className=" text-base text-[#f7f7ef]">
+          <Navbar />
+          {children}
+          <Footer />           <--- deleted this line
+        </div>
+      </body>
+    </html>
+  );
+...
+---------------------------
+(end of BEFORE code block)
+
+(begin AFTER code block)     (after all changes were made)
+---------------------------
+...
+return (
+    <html lang="en">
+      <body className={roboto.className}>
+        <div className=" text-base text-[#f7f7ef]">
+          <Navbar />
+          {children}
+          <div className="xl:mt-24">      <--- added this line       
+            <Footer01 />                  <--- added this line
+          </div>                          <--- added this line
+        </div>
+      </body>
+    </html>
+  );
+...
+---------------------------
+(end of AFTER code block)
+
+
+------------------ END of EXAMPLE Code Change nn ---------------------
+
+
+-------------------- BEGIN Code-Change-01 Form -----------------------
+Name of file that was changed: gird.ts
+Brief description: changed the customData type to be optional. 
+
+(begin BEFORE code block)    (before any changes were made)
+---------------------------
+
+export interface ILayoutItemMetadata {
+  i: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  customData: ICustomLayoutMetadata;       <--- deleted this line
+}
+
+export interface ILayouts {
+  [key: string]: ILayoutItemMetadata[];
+}
+
+export interface ICustomLayoutMetadata {
+  imgUrl: string;
+}
+ 
+---------------------------
+(end of BEFORE code block)
+
+
+(begin AFTER code block)     (after all changes were made)
+---------------------------
+
+export interface ILayoutItemMetadata {
+  i: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  customData?: ICustomLayoutMetadata;       <--- added this line
+}
+
+export interface ILayouts {
+  [key: string]: ILayoutItemMetadata[];
+}
+
+export interface ICustomLayoutMetadata {
+  imgUrl: string;
+}
+ 
+ 
+---------------------------
+(end of AFTER code block)
+
+-------------------- END OF Code-Change-01 Form ----------------------
+
+
+
+
+-------------------- BEGIN Code-Change-02 Form -----------------------
+Name of file that was changed: Hero.tsx
+Brief description: Added the Lo1R2C_d01c01 component to the Hero component.
+
+(begin BEFORE code block)    (before any changes were made)
+---------------------------
+
+const Hero = () => {
+  return (
+    <main className="flex items-center justify-between flex-1">             <--- deleted this line
+      <div className="flex flex-col items-start gap-2">                     <--- deleted this line
+        <div>
+          <h1 className="text-6xl font-bold">
+            Discover the Power of Our Services
+          </h1>
+          <p className="mt-6 text-lg text-muted-foreground">
+            Transform your business with our innovative solutions.
+          </p>
+        </div>
+        <div className="flex space-x-6 mt-6">
+          <button className="px-6 py-3 text-lg font-medium text-white bg-black rounded-md">
+            Learn More
+          </button>
+          <Link href="/" className="px-6 py-3 text-lg font-medium ">
+            Sign Up
+          </Link>
+        </div>
+      </div>                                                    <--- deleted this line
+
+      <div className="w-full max-w-xl">                            <--- deleted this line
+        <Image
+          src="/Happy Couple.jpg"
+          alt="Placeholder"
+          width={800}
+          height={800}
+          className="object-cover w-full h-full"
+        />
+      </div>                                                    <--- deleted this line
+    </main>                                                     <--- deleted this line
+  );
+};
+ 
+---------------------------
+(end of BEFORE code block)
+
+
+(begin AFTER code block)     (after all changes were made)
+---------------------------
+
+const Hero = () => {
+  const layouts: ILayouts = {                                  <--- added this line
+    lg: [                                                       <--- added this line
+      {                                                         <--- added this line
+        i: "a",                                                 <--- added this line
+        x: 0,                                                    <--- added this line
+        y: 0,                                                    <--- added this line
+        w: 1,                                                    <--- added this line
+        h: 1,                                                    <--- added this line
+      },                                                        <--- added this line
+      {                                                         <--- added this line
+        i: "b",                                                 <--- added this line
+        x: 1,                                                    <--- added this line
+        y: 0,                                                    <--- added this line
+        w: 1,                                                    <--- added this line
+        h: 1,                                                    <--- added this line
+      },                                                        <--- added this line
+    ],                                                          <--- added this line
+  };                                                            <--- added this line
+  return (
+    <section className="">                                        <--- added this line
+      <div className="container mx-auto px-1 py-16 md:py-24">       <--- added this line
+        <Lo1R2C_d01c01                                             <--- added this line
+          layouts={layouts}                                         <--- added this line
+          breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}  <--- added this line
+          cols={{ lg: 2, md: 2, sm: 2, xs: 1, xxs: 1 }}             <--- added this line
+          rowHeight={500}                                          <--- added this line
+        >
+          <div key={"a"} className="flex items-center">             <--- added this line
+            <div>
+              <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold mb-4 text-left">  <--- added this line
+                Discover the Power of Our Services
+              </h1>
+              <p className="text-md lg:text-lg md:text-lg text-gray-600 mb-8 text-left">  <--- added this line
+                Transform your business with our innovative solutions.
+              </p>
+
+              <div className="flex space-x-4">                     <--- added this line
+                <button className="px-6 py-3 text-lg font-medium text-white bg-black rounded-md">  <--- added this line
+                  Learn More
+                </button>                                            <--- added this line
+                <Link href="/" className="px-6 py-3 text-lg font-medium ">
+                  Sign Up
+                </Link>
+              </div>                                                <--- added this line
+            </div>                                                  <--- added this line
+          </div>                                                  <--- added this line
+
+          <div key={"b"}>                                            <--- added this line
+            <div className="relative h-80 md:h-auto">                  <--- added this line
+              <Image                                               
+                src="/Happy Couple.jpg"
+                alt="Placeholder"
+                width={800}
+                height={800}
+                className="rounded-lg shadow-lg object-cover w-full md:h-[56vh] xl:h-[70vh] max-h-[550px]"   <--- added this line
+              />
+            </div>                                                  <--- added this line
+          </div>                                                  <--- added this line
+        </Lo1R2C_d01c01>                                           <--- added this line
+      </div>
+    </section>
+  );
+};
+ 
+---------------------------
+(end of AFTER code block)
+
+-------------------- END OF Code-Change-02 Form ----------------------
+
+-------------------- BEGIN Code-Change-01 Form -----------------------
+Name of file that was changed: src/app/page.ts
+Brief description: Changed the paddings to appear only on mobile screen to make it more mobile responsive.. 
+
+(begin BEFORE code block)    (before any changes were made)
+---------------------------
+
+ <main className="md:px-24 md:py-16">      <--- deleted this line
+      <Hero />
+    </main>
+
+ 
+---------------------------
+(end of BEFORE code block)
+
+
+(begin AFTER code block)     (after all changes were made)
+---------------------------
+
+ <main className="md:px-24 md:py-16">      <--- added this line
+      <Hero />
+    </main>
+ 
+ 
+---------------------------
+(end of AFTER code block)
+
+-------------------- END OF Code-Change-01 Form ----------------------
+
+
+=====================================================================
+OPERATIONS SECTION: 
+-------------------
+Perform these operations:
+                                                                        Check
+Operation Name             Operation explanation or details             Mark
+-------------------------  -----------------------------------          -----
+install react-grid-layout  run `npm install react-grid-layout`           DONE
+library                    to install the react-grid-layout 
+                           library
+
+install types for          run the below command to install the         DONE
+react-grid-layout          types for react-grid-layout
+                           `npm i --save-dev @types/react-grid-layout`
+         
+
+
+
+Add comments about this section to help a future developer.
+
+
+
+
+=====================================================================
+TESTING SECTION:
+----------------
+Perform these operations to MANUALLY TEST and to confirm that 
+the layout component is working properly: 
+                                                                        Check
+Test Step to Do            Test Step details                            Mark
+-------------------------  -----------------------------------          -----
+Check if the component     Make sure that on the web page, the          DONE
+Renders                    component should have a image on the 
+                           right side of the page and on the 
+                           left side it should have the heading
+                           text description text and button to
+                           learn more and sign up.
+
+Check for mobile           Reduce the size of the browser window        DONE
+responsiveness             and make sure that the Hero section 
+                           stakes properly. The ideal behavior is 
+                           that the Heading, Description and the
+                           buttons should be on top and the image
+                           should stack below them.
+
+
+
+
+Add comments about this section to help a future developer.
+
+
+
+
+=====================================================================
+TROUBLE-SHOOTING SECTION:
+-------------------------
+
+Problems Encountered in this Install: (leave blank if no problems)
+-------------------------------------
+(describe problem here)
+
+
+
+
+(describe how you solved this problem)
+
+
+
+
+(paste error msg here)
+
+
+
+
+(paste code block here)                                    
+
+
+
+
+=====================================================================
+(End of Document) 
